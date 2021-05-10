@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.GetMapping;
 
 @RestController
 public class StudentController {
@@ -45,6 +46,22 @@ public class StudentController {
 	public void updateStudent(@RequestBody Student student, @PathVariable int id) {
 		studentService.updateStudent(student,id);
 	}
+	@GetMapping("/")
+	public String home() {
+		return ("<h1>welcome home</h1>");
+	}
+
+	@GetMapping("/admin")
+	public String admin() {
+		return ("<h1>welcome admin</h1>");
+	}
+
+	@GetMapping("/user")
+	public String user() {
+		return ("<h1>welcome user</h1>");
+	}
+
+
 	
 
 }
